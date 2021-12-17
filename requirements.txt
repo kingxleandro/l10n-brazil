@@ -5,4 +5,4 @@ nfelib
 num2words
 odoo_test_helper
 pyOpenSSL
-lxml
+lxml==4.7.1
