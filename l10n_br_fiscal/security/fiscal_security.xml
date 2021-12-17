@@ -3,9 +3,7 @@
 
     <record id="module_category_l10n_br_fiscal_management" model="ir.module.category">
         <field name="name">Brazilian Fiscal</field>
-        <field
-            name="description"
-        >Extends Odoo to helps you manage your brazilian fiscal documents, taxes and etc...</field>
+        <field name="description">Extends Odoo to helps you manage your brazilian fiscal documents, taxes and etc...</field>
         <field name="sequence">30</field>
     </record>
 
@@ -26,64 +24,48 @@
     </record>
 
     <record id="base.user_admin" model="res.users">
-        <field
-            name="groups_id"
-            eval="[(4, ref('l10n_br_fiscal.group_manager'), ref('l10n_br_fiscal.group_data_maintenance'))]"
-        />
+        <field name="groups_id" eval="[(4, ref('l10n_br_fiscal.group_manager'), ref('l10n_br_fiscal.group_data_maintenance'))]"/>
     </record>
 
     <record id="l10n_br_fiscal_tax_estimate_rule" model="ir.rule">
         <field name="name">Fiscal Tax Estimate multi-company</field>
         <field name="model_id" ref="model_l10n_br_fiscal_tax_estimate" />
         <field eval="True" name="global" />
-        <field
-            name="domain_force"
-        >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','in',company_ids)]</field>
     </record>
 
     <record id="l10n_br_fiscal_operation_line_rule" model="ir.rule">
         <field name="name">Fiscal Operation multi-company</field>
         <field name="model_id" ref="model_l10n_br_fiscal_operation" />
         <field eval="True" name="global" />
-        <field
-            name="domain_force"
-        >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','in',company_ids)]</field>
     </record>
 
     <record id="l10n_br_fiscal_document_serie_rule" model="ir.rule">
         <field name="name">Fiscal Document Serie multi-company</field>
         <field name="model_id" ref="model_l10n_br_fiscal_document_serie" />
         <field eval="True" name="global" />
-        <field
-            name="domain_force"
-        >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','in',company_ids)]</field>
     </record>
 
     <record id="l10n_br_fiscal_document_rule" model="ir.rule">
         <field name="name">Fiscal Document multi-company</field>
         <field name="model_id" ref="model_l10n_br_fiscal_document" />
         <field eval="True" name="global" />
-        <field
-            name="domain_force"
-        >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','in',company_ids)]</field>
     </record>
 
     <record id="l10n_br_fiscal_document_line_rule" model="ir.rule">
         <field name="name">Fiscal Document line multi-company</field>
         <field name="model_id" ref="model_l10n_br_fiscal_document_line" />
         <field eval="True" name="global" />
-        <field
-            name="domain_force"
-        >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','in',company_ids)]</field>
     </record>
 
     <record id="l10n_br_fiscal_document_email_rule" model="ir.rule">
         <field name="name">Fiscal Document Email multi-company</field>
         <field name="model_id" ref="model_l10n_br_fiscal_document_email" />
         <field eval="True" name="global" />
-        <field
-            name="domain_force"
-        >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','in',company_ids)]</field>
     </record>
-
 </odoo>
